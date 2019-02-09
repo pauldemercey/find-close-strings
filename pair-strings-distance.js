@@ -1,5 +1,5 @@
 const findPairs = (data) => {
-  // distribution gathers position after position the count of characters
+  // count the occurence of characters for every position in the string
   let distribution = data.reduce((memo, line) => {
     let len = line.length;
     for(let i=0; i<len; i++){
@@ -17,6 +17,7 @@ const findPairs = (data) => {
     return memo;
   }, []);
 
+  // reference is a made up string
   const reference = distribution.map((map) => {
     let max = 0, char;
     map.forEach((value, key) => {
@@ -45,8 +46,6 @@ const findPairs = (data) => {
   let maxDistance = 0;
 
   let dataBydistance = data.reduce((memo, item, index) => {
-    // const steps = getSteps(item, reference);
-    // const distance = Object.keys(steps).length;
     const distance = getDistance(item, reference);
     if(distance > maxDistance){
       maxDistance = distance;
@@ -72,13 +71,9 @@ const findPairs = (data) => {
     const aVal = data[a];
     for(let i = 0 ; i<len ; i++){
       const b = list[i];
-      // const comparison = compareAB(a, b);
       const dist = getDistance(aVal, data[b]);
-      //if(comparison === 1){
       if(dist === 1){
-        output.push(
-          [a, b]
-          );
+        output.push([a, b]);
       }
     }
   }
@@ -106,6 +101,8 @@ const findPairs = (data) => {
         if(distance > 0){
           compareAToSet(a, nextList);
         } else {
+          // when distance is 0 we know 'a' is one letter away from all strings
+          // of nextList, no need to do any string comparison
           const len = nextList.length;
           for(let i = 0 ; i<len ; i++){
             output.push([a, nextList[i]]);

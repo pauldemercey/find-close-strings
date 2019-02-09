@@ -1,5 +1,5 @@
 const findPairs = (data) => {
-  // distribution gathers position after position the count of characters
+
   const tree = data.reduce((memo, line, index) => {
     const len = line.length;
     let ref = memo;

@@ -5,7 +5,11 @@
   "scripts": {
     "generate": "./generate-data.js",
     "lint": "eslint --ext .js .",
-    "test": "./test.js"
+    "test": "./test.js",
+    "test-exactness": "./test-exactness.js"
+  },
+  "engines": {
+    "node": ">=8.0.0"
   },
   "dependencies": {
     "commander": "~2.9.0"

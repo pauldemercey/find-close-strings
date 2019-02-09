@@ -5,7 +5,6 @@ const pairStringsDistance = require('./pair-strings-distance');
 const pairStringsBrute = require('./pair-strings-brute');
 const pairStringsTree = require('./pair-strings-tree');
 const program = require('commander');
-const { performance } = require('perf_hooks');
 let fileValue;
 
 program
@@ -31,14 +30,17 @@ const TREE_ALGORITHM = "Tree";
 console.time(BRUTEFORCE_ALGORITHM);
 const reportBrute = pairStringsBrute(data);
 console.timeEnd(BRUTEFORCE_ALGORITHM);
+console.log(`# pairs: ${reportBrute.length}`);
 
 console.time(DISTANCE_ALGORITHM);
 const reportDistance = pairStringsDistance(data);
 console.timeEnd(DISTANCE_ALGORITHM);
+console.log(`# pairs: ${reportDistance.length}`);
 
 console.time(TREE_ALGORITHM);
 const reportTree = pairStringsTree(data);
 console.timeEnd(TREE_ALGORITHM);
+console.log(`# pairs: ${reportTree.length}`);
 
 if(reportDistance.length !== reportBrute.length){
   console.error(
