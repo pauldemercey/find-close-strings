@@ -1,8 +1,8 @@
 ## find-close-strings
 
 ## Foreword
-That problem was asked by a colleague of mine during a job interview.
-On the spot I realized I did not have any clue on how to solve it efficiently, I tested a few methods and wanted to share those here.
+That problem was asked by a colleague during a job interview.
+On the spot I realized I did not have any clue on how to solve it efficiently, I tested a few methods and thought I would better share them here.
 
 ## Problem
 Given a list of strings of the same length.
