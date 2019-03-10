@@ -13,8 +13,7 @@ Here are the methods I tried so far. The tree parsing methods grows much better 
 
 # Brute force
 Make a comparison on every possible pair and keep only those that differ by one character.
-That one is easy to understand, but the number of comparisons to do does not grow well.
-n being the number of strings, it grows by n!
+That one is easy to understand, but it does not grow well.
 
 # Distance
 String distance can be expressed by the Hamming distance: https://en.wikipedia.org/wiki/Hamming_distance
